@@ -1,6 +1,7 @@
 import { PayloadAction, createAction, createSlice } from "@reduxjs/toolkit";
 import { User, Users } from "./types/state";
 
+import { PostUser } from "./types/action";
 import { initialState } from "./initialState";
 
 const userSlice = createSlice({
@@ -16,6 +17,6 @@ const userSlice = createSlice({
 export const { setUsers } = userSlice.actions;
 
 export const getUsers = createAction("users/get");
-export const postUser = createAction<User>("users/post");
+export const postUser = createAction<PostUser>("users/post");
 
 export default userSlice.reducer;
