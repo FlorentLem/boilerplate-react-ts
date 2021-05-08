@@ -1,3 +1,5 @@
+import PostUser from "./components/PostUser";
+import User from "./components/User";
 import { useGetUsers } from "./useGetUsers";
 
 const App = () => {
@@ -7,13 +9,12 @@ const App = () => {
 
   return (
     <div>
-      {users.map((user) => (
-        <div>
-          <div>Email: {user.email}</div>
-          <div>Password: {user.password}</div>
-          <div>Date: {user.date}</div>
-        </div>
-      ))}
+      {users.length !== 0 ? (
+        users.map((user) => <User user={user} />)
+      ) : (
+        <div>Enter a user to start</div>
+      )}
+      <PostUser />
     </div>
   );
 };

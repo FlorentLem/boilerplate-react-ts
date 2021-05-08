@@ -1,19 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse, Method } from "axios";
 
-export function fetch(
-  url: string,
-  params: URLSearchParams
-): Promise<AxiosResponse> {
-  return request("GET", url, params);
-}
-
-export function post(
-  url: string,
-  params: object | string
-): Promise<AxiosResponse> {
-  return request("POST", url, params);
-}
-
 export function request(method: Method, url: string, params?: object | string) {
   const config: AxiosRequestConfig = {
     method,
@@ -28,4 +14,18 @@ export function request(method: Method, url: string, params?: object | string) {
   }
 
   return axios(config);
+}
+
+export function fetch(
+  url: string,
+  params: URLSearchParams
+): Promise<AxiosResponse> {
+  return request("GET", url, params);
+}
+
+export function post(
+  url: string,
+  params: object | string
+): Promise<AxiosResponse> {
+  return request("POST", url, params);
 }
