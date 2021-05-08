@@ -18,7 +18,7 @@ export function request(method: Method, url: string, params?: object | string) {
 
 export function fetch(
   url: string,
-  params: URLSearchParams
+  params?: URLSearchParams
 ): Promise<AxiosResponse> {
   return request("GET", url, params);
 }
