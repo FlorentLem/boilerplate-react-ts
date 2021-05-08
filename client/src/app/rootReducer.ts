@@ -5,8 +5,11 @@ import {
 
 import { PayloadAction } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
+import userReducer from "../features/users/usersSlice";
 
-const appReducer = combineReducers({});
+const appReducer = combineReducers({
+  users: userReducer,
+});
 
 const rootReducer = (state: any, action: PayloadAction) => {
   return appReducer(state, action);
